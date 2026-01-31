@@ -69,7 +69,8 @@ ECDSA_PATTERNS = [
     ),
     CryptoPattern(
         name="ECDSA Usage",
-        pattern=re.compile(r"(?:ECDSA|ec\.generate|EllipticCurve|SECP\d+|P-\d{3}|prime256v1|secp384r1)", re.IGNORECASE),
+        # Note: P-256/384/521 patterns use word boundary to avoid matching EIP-712, etc.
+        pattern=re.compile(r"(?:ECDSA|ec\.generate|EllipticCurve|SECP\d+|(?<![A-Za-z])P-(?:256|384|521)\b|prime256v1|secp384r1)", re.IGNORECASE),
         algorithm="ECDSA/ECC",
         risk_level=RiskLevel.CRITICAL,
         description="Elliptic curve cryptography usage detected",

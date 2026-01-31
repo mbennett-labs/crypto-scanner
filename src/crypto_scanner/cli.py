@@ -1,12 +1,12 @@
 """Command-line interface for crypto-scanner."""
 
+import sys
 from pathlib import Path
 from typing import Optional
 
 import typer
 from rich.console import Console
 from rich.panel import Panel
-from rich.progress import Progress, TextColumn
 from rich.table import Table
 
 from crypto_scanner import __version__
@@ -14,13 +14,18 @@ from crypto_scanner.models import RiskLevel
 from crypto_scanner.reporters import HTMLReporter, JSONReporter
 from crypto_scanner.scanner import CryptoScanner
 
+# Force UTF-8 encoding for stdout/stderr on Windows
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 app = typer.Typer(
     name="crypto-scanner",
     help="Scan directories for cryptographic usage and generate quantum-vulnerability risk assessments.",
     add_completion=False,
 )
 
-console = Console()
+console = Console(force_terminal=True)
 
 
 def version_callback(value: bool) -> None:

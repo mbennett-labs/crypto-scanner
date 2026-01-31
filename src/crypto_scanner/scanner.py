@@ -19,10 +19,16 @@ class CryptoScanner:
 
     # Default patterns to exclude
     DEFAULT_EXCLUDES = {
+        # Version control
         ".git",
         ".svn",
         ".hg",
+        # Dependencies
         "node_modules",
+        "vendor",
+        "third_party",
+        "site-packages",
+        # Python
         "__pycache__",
         ".pytest_cache",
         ".mypy_cache",
@@ -30,15 +36,20 @@ class CryptoScanner:
         ".venv",
         "venv",
         "env",
-        ".env",
+        "*.egg-info",
+        # Build outputs
+        ".next",
+        ".nuxt",
+        ".output",
         "dist",
         "build",
-        "*.egg-info",
+        "out",
+        "target",
+        # IDE/Editor
         ".idea",
         ".vscode",
-        "vendor",
-        "third_party",
-        "site-packages",
+        # Environment files (often contains secrets)
+        ".env",
     }
 
     def __init__(
