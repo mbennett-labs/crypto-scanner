@@ -1,0 +1,29 @@
+# Sample configuration file with cryptographic settings
+
+server:
+  host: localhost
+  port: 443
+
+ssl:
+  enabled: true
+  protocols:
+    - TLSv1.2
+    - TLSv1.3
+  cipher_suites:
+    - TLS_AES_256_GCM_SHA384
+    - TLS_CHACHA20_POLY1305_SHA256
+  certificate: /etc/ssl/certs/server.crt
+  private_key: /etc/ssl/private/server.key
+
+security:
+  encryption:
+    algorithm: AES-256-GCM
+    key_size: 256
+  hashing:
+    password_algorithm: bcrypt
+    data_integrity: SHA-256
+
+# Legacy settings (should trigger warnings)
+legacy:
+  old_cipher: DES
+  weak_hash: MD5
