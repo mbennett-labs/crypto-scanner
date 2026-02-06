@@ -7,7 +7,7 @@ generating quantum-vulnerability risk assessments.
 Developed by Quantum Shield Labs
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = "Quantum Shield Labs"
 
 from crypto_scanner.models import Finding, RiskLevel, ScanReport
