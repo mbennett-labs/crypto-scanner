@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <defs>
+    <!-- Gradient for shield -->
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <!-- Glow effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Shield shape -->
+  <path d="M50 15 L85 25 L85 55 C85 75 70 90 50 100 C30 90 15 75 15 55 L15 25 Z"
+        fill="url(#shieldGradient)"
+        stroke="#0f172a"
+        stroke-width="2"/>
+
+  <!-- Inner shield border -->
+  <path d="M50 22 L78 30 L78 54 C78 70 66 82 50 90 C34 82 22 70 22 54 L22 30 Z"
+        fill="none"
+        stroke="#0f172a"
+        stroke-width="1.5"
+        opacity="0.3"/>
+
+  <!-- Atom/Quantum symbol - center nucleus -->
+  <circle cx="50" cy="52" r="6" fill="#0f172a"/>
+
+  <!-- Electron orbits -->
+  <ellipse cx="50" cy="52" rx="22" ry="8"
+           fill="none"
+           stroke="#0f172a"
+           stroke-width="2"
+           transform="rotate(-30 50 52)"/>
+  <ellipse cx="50" cy="52" rx="22" ry="8"
+           fill="none"
+           stroke="#0f172a"
+           stroke-width="2"
+           transform="rotate(30 50 52)"/>
+  <ellipse cx="50" cy="52" rx="22" ry="8"
+           fill="none"
+           stroke="#0f172a"
+           stroke-width="2"
+           transform="rotate(90 50 52)"/>
+
+  <!-- Electrons -->
+  <circle cx="50" cy="30" r="3" fill="#0f172a" filter="url(#glow)"/>
+  <circle cx="31" cy="63" r="3" fill="#0f172a" filter="url(#glow)"/>
+  <circle cx="69" cy="63" r="3" fill="#0f172a" filter="url(#glow)"/>
+
+  <!-- Lock keyhole in center -->
+  <circle cx="50" cy="50" r="3" fill="#10b981"/>
+  <rect x="48" y="50" width="4" height="6" fill="#10b981"/>
+
+  <!-- Text: Crypto Scanner -->
+  <text x="110" y="52"
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="32"
+        font-weight="700"
+        fill="#0f172a">
+    Crypto Scanner
+  </text>
+
+  <!-- Tagline -->
+  <text x="110" y="75"
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="12"
+        font-weight="400"
+        fill="#64748b">
+    Quantum Vulnerability Assessment
+  </text>
+</svg>

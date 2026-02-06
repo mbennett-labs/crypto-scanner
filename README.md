@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="https://via.placeholder.com/600x150/1a1a2e/e94560?text=Crypto+Scanner" alt="Crypto Scanner Logo" />
+  <img src="https://raw.githubusercontent.com/mbennett-labs/crypto-scanner/main/assets/logo-banner.svg" alt="Crypto Scanner" width="700" />
 </p>
-
-<h1 align="center">Crypto Scanner</h1>
 
 <p align="center">
   <strong>Scan your codebase for quantum-vulnerable cryptography before it's too late.</strong>
@@ -505,7 +503,7 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 <p align="center">
   <a href="https://quantumshieldlabs.dev">
-    <img src="https://via.placeholder.com/200x60/1a1a2e/e94560?text=QSL" alt="Quantum Shield Labs" />
+    <img src="https://raw.githubusercontent.com/mbennett-labs/crypto-scanner/main/assets/logo.svg" alt="Quantum Shield Labs" width="300" />
   </a>
 </p>
 
